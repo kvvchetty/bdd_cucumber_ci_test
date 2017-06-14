@@ -1,0 +1,11 @@
+{
+  "name": "cucumber-integration-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Graham Cox <graham@grahamcox.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "convict": "^3.0.0",
+    "express": "^4.15.3"
+  }
+}
