@@ -5,14 +5,16 @@
   "author": "Graham Cox <graham@grahamcox.co.uk>",
   "license": "MIT",
   "scripts": {
-      "acceptance": "grunt acceptance"
+    "acceptance": "grunt acceptance"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
     "convict": "^3.0.0",
+    "cucumber": "^2.3.1",
     "express": "^4.15.3",
     "grunt": "^1.0.1",
     "grunt-express-server": "^0.5.3",
+    "grunt-shell": "^2.1.0",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
     "passport-http-bearer": "^1.0.1"
