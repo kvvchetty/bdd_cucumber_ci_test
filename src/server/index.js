@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require('./config');
 require('./authentication/accesstoken');
@@ -7,11 +8,22 @@ require('./authentication/basic');
 const app = express();
 
 app.use(passport.initialize());
+app.use(bodyParser.json());
+
+let name = 'Graham';
 
 app.get('/api/insecure', (req, res) => {
 	res.send({
 		answer: 42,
-		name: 'Graham'
+		name: name
+	});
+});
+
+app.post('/api/insecure', (req, res) => {
+	name = req.body.name;
+	res.send({
+		answer: 42,
+		name: name
 	});
 });
 
