@@ -15,6 +15,35 @@ app.get('/api/insecure', (req, res) => {
 	});
 });
 
+app.get('/api/list', (req, res) => {
+	res.send({
+		offset: 0,
+		total: 100,
+		data: [
+			{
+				id: 1,
+				name: 'One'
+			},
+			{
+				id: 2,
+				name: 'Two'
+			},
+			{
+				id: 3,
+				name: 'Three'
+			},
+			{
+				id: 4,
+				name: 'Four'
+			},
+			{
+				id: 5,
+				name: 'Five'
+			},
+		]
+	});
+});
+
 app.get('/api/secure',
 	passport.authenticate('bearer', { session: false }),
 	(req, res) => {
