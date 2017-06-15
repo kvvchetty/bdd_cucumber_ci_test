@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
+    "build-url": "^1.0.9",
     "convict": "^3.0.0",
     "cucumber": "^2.3.1",
     "express": "^4.15.3",
@@ -16,6 +17,7 @@
     "grunt-express-server": "^0.5.3",
     "grunt-freeport": "^0.1.1",
     "grunt-shell": "^2.1.0",
+    "node-fetch": "^1.7.1",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
     "passport-http-bearer": "^1.0.1"
