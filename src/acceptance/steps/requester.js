@@ -16,7 +16,15 @@ function get(url) {
 
     lastResponse = fetch(realUrl)
         .then((res) => {
-            return res.json().then((body) => {
+            let bodyPromise;
+            const contentType = res.headers.get('content-type') || '';
+            if (contentType.indexOf('application/json') >= 0) {
+                bodyPromise = res.json();
+            } else {
+                bodyPromise = res.text();
+            }
+
+            return bodyPromise.then((body) => {
                 return {
                     status: res.status,
                     headers: res.headers.raw(),
