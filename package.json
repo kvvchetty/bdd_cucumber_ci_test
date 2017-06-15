@@ -17,9 +17,11 @@
     "grunt-express-server": "^0.5.3",
     "grunt-freeport": "^0.1.1",
     "grunt-shell": "^2.1.0",
+    "http-status-codes": "^1.1.6",
     "node-fetch": "^1.7.1",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
-    "passport-http-bearer": "^1.0.1"
+    "passport-http-bearer": "^1.0.1",
+    "unexpected": "^10.29.0"
   }
 }
