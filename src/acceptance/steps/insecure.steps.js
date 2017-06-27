@@ -12,6 +12,11 @@ defineSupportCode(function ({ When, Then }) {
     When('I retrieve the Insecure Resource', function() {
         return requester.get('api/insecure');
     });
+
+    When('I update the Insecure Resource to have name {stringInDoubleQuotes}', function (newName) {
+        return requester.post('api/insecure', { name: newName });
+    });
+
     Then('the Insecure Resource has details:', function(data) {
         return requester.getLastResponse().then((response) => {
             const expected = data.rowsHash();
