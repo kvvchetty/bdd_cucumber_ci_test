@@ -3,7 +3,11 @@ const httpStatusCodes = require('http-status-codes');
 const expect = require('unexpected');
 const requester = require('./requester');
 
-defineSupportCode(function ({ Then }) {
+defineSupportCode(function ({ Before, Then }) {
+    Before(function() {
+        return requester.post('api/reset');
+    });
+
     Then(/^I get an? (.+) response$/, function (statusName) {
         const statusCode = httpStatusCodes[statusName.toUpperCase().replace(' ', '_')];
 
