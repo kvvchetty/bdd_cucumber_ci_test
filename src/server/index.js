@@ -19,6 +19,11 @@ app.get('/api/insecure', (req, res) => {
 	});
 });
 
+app.post('/api/reset', (req, res) => {
+	name = 'Graham';
+	res.send();
+});
+
 app.post('/api/insecure', (req, res) => {
 	name = req.body.name;
 	res.send({
