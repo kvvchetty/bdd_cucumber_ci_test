@@ -44,6 +44,40 @@ function get(url) {
     return lastResponse;
 }
 
+// Perform a POST request to the server
+function post(url, body) {
+    const realUrl = buildUrl(baseUrl, {
+        path: url
+    });
+
+    const headers = {};
+    headers['content-type'] = 'application/json';
+    if (accessToken) {
+        headers.authorization = 'Bearer ' + accessToken;
+    }
+
+    lastResponse = fetch(realUrl, { method: 'POST', headers: headers, body: JSON.stringify(body) })
+        .then((res) => {
+            let bodyPromise;
+            const contentType = res.headers.get('content-type') || '';
+            if (contentType.indexOf('application/json') >= 0) {
+                bodyPromise = res.json();
+            } else {
+                bodyPromise = res.text();
+            }
+
+            return bodyPromise.then((body) => {
+                return {
+                    status: res.status,
+                    headers: res.headers.raw(),
+                    body: body
+                };
+            });
+        });
+
+    return lastResponse;
+}
+
 // Get the last response that we received
 function getLastResponse() {
     return lastResponse;
@@ -75,6 +109,7 @@ function clearAuthentication() {
 
 module.exports = {
     get: get,
+    post: post,
     authenticate: authenticate,
     clearAuthentication: clearAuthentication,
     getLastResponse: getLastResponse
