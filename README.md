@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Integration Testing your HTTP API with Cucumber
 
 [![Build Status](https://semaphoreci.com/api/v1/grahamcox82/cucumber-integration-testing/branches/master/badge.svg)](https://semaphoreci.com/grahamcox82/cucumber-integration-testing)
@@ -26,3 +27,7 @@ The tests all live in `src/acceptance`. These can be executed by running `grunt 
 * Run the tests against the server
 * Shut everything down
 
+=======
+# bdd_cucumber_ci_test
+behavioral driven development test continuous integation using cucumber 
+>>>>>>> 82d3a6563db920f39a49b505b28edcbb0dd1f08d
